@@ -323,6 +323,7 @@ class LocalDecoderV1(nn.Module):
         xy = normalize_coordinate(
             p.clone(), plane=plane, padding=self.padding
         )  # normalize to the range of (0, 1)
+
         xy = xy[:, :, None].float()
         vgrid = 2.0 * xy - 1.0  # normalize to (-1, 1)
         c = F.grid_sample(

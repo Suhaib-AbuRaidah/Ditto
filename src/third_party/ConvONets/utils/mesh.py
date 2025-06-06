@@ -181,7 +181,7 @@ class DelauneyMeshExtractor(object):
                     triangles.append((i2, i4, i3))
 
         vertices = np.asarray(vertices, dtype=np.float32)
-        triangles = np.asarray(triangles, dtype=np.int32)
+        triangles = np.asarray(triangles, dtype=int32)
 
         return vertices, triangles
 

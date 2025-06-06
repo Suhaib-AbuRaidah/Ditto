@@ -68,7 +68,7 @@ class GeoArtDatasetV1(Dataset):
 
         # process occ and seg points
         p_occ_start = data["start_p_occ"]
-        occ_label = occ_label.astype(np.bool)
+        occ_label = occ_label.astype(np.bool_)
         p_seg_start = data["start_p_occ"][occ_label]
         seg_label = seg_label_full[occ_label]
 

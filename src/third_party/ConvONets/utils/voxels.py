@@ -11,7 +11,7 @@ from src.third_party.ConvONets.utils.libvoxelize.voxelize import voxelize_mesh_
 class VoxelGrid:
     def __init__(self, data, loc=(0.0, 0.0, 0.0), scale=1):
         assert data.shape[0] == data.shape[1] == data.shape[2]
-        data = np.asarray(data, dtype=np.bool)
+        data = np.asarray(data, dtype=np.bool_)
         loc = np.asarray(loc)
         self.data = data
         self.loc = loc
@@ -206,7 +206,7 @@ class VoxelGrid:
         # Rescale bounding box to [-0.5, 0.5]^3
         points = (points - self.loc) / self.scale
         # Discretize points to [0, nx-1]^3
-        points_i = ((points + 0.5) * nx).astype(np.int32)
+        points_i = ((points + 0.5) * nx).astype(int32)
         # i1, i2, i3 have sizes (batch_size, T)
         i1, i2, i3 = points_i[..., 0], points_i[..., 1], points_i[..., 2]
         # Only use indices inside bounding box
@@ -217,7 +217,7 @@ class VoxelGrid:
         i3 = i3[mask]
 
         # Compute values, default value outside box is 0
-        occ = np.zeros(points.shape[:-1], dtype=np.bool)
+        occ = np.zeros(points.shape[:-1], dtype=np.bool_)
         occ[mask] = self.data[i1, i2, i3]
 
         return occ
@@ -250,7 +250,7 @@ def voxelize_surface(mesh, resolution):
     vertices = (vertices + 0.5) * resolution
 
     face_loc = vertices[faces]
-    occ = np.full((resolution,) * 3, 0, dtype=np.int32)
+    occ = np.full((resolution,) * 3, 0, dtype=int32)
     face_loc = face_loc.astype(np.float32)
 
     voxelize_mesh_(occ, face_loc)

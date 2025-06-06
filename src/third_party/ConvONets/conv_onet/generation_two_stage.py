@@ -14,7 +14,7 @@ from src.third_party.ConvONets.common import (
 
 try:
     from src.third_party.ConvONets.utils import libmcubes
-    from src.third_party.ConvONets.utils.libmise import MISE
+    from src.third_party.ConvONets.utils.libmise.mise import MISE
     from src.third_party.ConvONets.utils.libsimplify import simplify_mesh
 except:
     print("import utils failed")
@@ -49,7 +49,7 @@ class Generator3D(object):
     def __init__(
         self,
         model,
-        points_batch_size=100000,
+        points_batch_size=1000000,
         threshold=0.5,
         seg_threshold=0.5,
         refinement_step=0,

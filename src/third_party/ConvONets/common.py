@@ -254,6 +254,8 @@ def normalize_coordinate(p, padding=0.1, plane="xz"):
     xy_new = xy_new + 0.5  # range (0, 1)
 
     # f there are outliers out of the range
+    
+    xy_new = xy_new
     if xy_new.max() >= 1:
         xy_new[xy_new >= 1] = 1 - 10e-6
     if xy_new.min() < 0:
