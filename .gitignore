@@ -146,3 +146,6 @@ wandb/
 .env
 .autoenv
 data
+
+# mp4
+*.mpy

@@ -11,7 +11,7 @@ color = np.ones((num_points,3))
 colored_points = np.hstack((pc_start,color))
 
 colored_points[pc_seg_start, 3:] = [120, 255, 255]
-colored_points[~pc_seg_start, 3:] = [255, 2500, 255]
+colored_points[~pc_seg_start, 3:] = [255, 250, 255]
 
 # point_cloud = o3d.geometry.PointCloud()
 # point_cloud.points = o3d.utility.Vector3dVector(colored_points[:,:3])

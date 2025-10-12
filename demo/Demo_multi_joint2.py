@@ -190,9 +190,9 @@ generator = Generator3D(
 )
 
 
-pc_end = np.load("./pc_start4_j2.npy")
+pc_end = np.load("./3L_2J_1P/pc_start_j0.npy")
 
-pc_start = np.load("./pc_end4_j2.npy")
+pc_start = np.load("./3L_2J_1P/pc_end_j0.npy")
 
 #rotation = (R.from_euler('x', np.pi/2)*R.from_euler('y', np.pi/2)).as_matrix()
 #rotation = R.from_euler('z', np.pi).as_matrix()
@@ -280,8 +280,8 @@ else:
     pivot_point_pred = mesh_dict[1].bounds.mean(0)
 """
 """
-
-
+print(f"Pivot Point: {pivot_point_pred}")
+print(f"Joint Axis: {joint_axis_pred}")
 scene = trimesh.Scene()
 static_part = mesh_dict[0].copy()
 mobile_part = mesh_dict[1].copy()
