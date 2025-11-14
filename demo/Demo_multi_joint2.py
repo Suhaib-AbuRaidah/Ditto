@@ -53,7 +53,7 @@ def vector_to_plotly_line(origin, direction, length=1.0, color='red'):
         mode='lines',
         line=dict(color=color, width=5)
     )
-
+# comment
 def pointcloud_to_plotly(points, color='black'):
     return go.Scatter3d(
         x=points[:, 0], y=points[:, 1], z=points[:, 2],
