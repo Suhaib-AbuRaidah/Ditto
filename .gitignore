@@ -149,3 +149,7 @@ data
 
 # mp4
 *.mpy
+# npy
+*.npy
+# glb
+*.glb
